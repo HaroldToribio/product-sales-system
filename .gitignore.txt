@@ -1,0 +1,20 @@
+# .NET
+bin/
+obj/
+*.user
+*.suo
+*.cache
+.vs/
+
+# Vue
+node_modules/
+dist/
+.DS_Store
+
+# Database
+*.db
+*.mdf
+*.ldf
+
+# Logs
+*.log

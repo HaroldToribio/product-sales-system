@@ -1,144 +1,97 @@
 # Product & Sales Management System
 
-Full-stack application for managing products, clients, and sales with JWT authentication.
+![Dashboard 1](product-sales-frontend/src/assets/SalesSystem.png)
+![Dashboard 2](product-sales-frontend/src/assets/SalesSystem2.png)
 
-## Technologies
+🎥 [Haz clic aquí para ver la Demo en Video](product-sales-frontend/src/assets/SalesSystemVidGif.mp4)
+
+Full-stack application for managing products, clients, and sales with secure JWT authentication.
+
+## 🚀 Technologies
 
 ### Backend
-- .NET 9.0
-- C# 
-- SQL Server
-- Entity Framework Core
-- JWT Authentication
-- BCrypt for password hashing
+- **.NET 9.0** (Latest)
+- **C#**
+- **SQL Server**
+- **Entity Framework Core** (Code-First)
+- **JWT Authentication** (JSON Web Tokens)
+- **BCrypt** for secure password hashing
 
 ### Frontend
-- Vue.js 3 (Composition API)
-- Axios
-- Vue Router
+- **Vue.js 3** (Composition API)
+- **Axios** (HTTP Client)
+- **Vue Router**
+- **Bootstrap / Tailwind** (Visual Framework)
 
-## Features
+## ✨ Features
 
-- JWT-based authentication
-- Product CRUD operations
-- Client CRUD operations
-- Sales management
-- Responsive design
-- RESTful API architecture
+- 🔐 **Secure Authentication:** JWT-based login and registration.
+- 📦 **Product Management:** Complete CRUD with stock control.
+- 👥 **Client Management:** Database of clients.
+- 💰 **Sales Processing:** Transactional sales recording.
+- 📱 **Responsive Design:** Optimized for mobile and desktop.
+- 🔌 **RESTful API:** Clean and standard API architecture.
 
-## Architecture
+## 🏛️ Architecture & Patterns
 
-- **Layered Architecture**: Controllers → Services → DbContext
-- **SOLID Principles**: Dependency injection, single responsibility
-- **Repository Pattern**: Simplified for development speed
+This project follows industry best practices for scalability and maintainability:
 
-## Setup Instructions
+- **Layered Architecture:** Strict separation of concerns (Controllers → Services → Data Layer).
+- **Service Layer Pattern:** Encapsulates business logic and keeps Controllers clean.
+- **SOLID Principles:** Extensive use of Dependency Injection and Interface Segregation.
+- **Unit Testing:** Integrated testing suite for backend logic.
 
-### Backend
+## ⚙️ Setup Instructions
 
-1. Update connection string in `appsettings.json`:
+### Backend (API)
+
+1. Update the connection string in `appsettings.json`:
 ```json
 "ConnectionStrings": {
   "DefaultConnection": "Server=localhost;Database=ProductSalesDB;Trusted_Connection=True;TrustServerCertificate=True"
 }
-```
 
-2. Run migrations:
-```bash
+Run migrations:
+
+Bash
+
 dotnet ef database update
-```
+Start the API:
 
-3. Start the API:
-```bash
+Bash
+
 dotnet run
-```
+Frontend
+Navigate to frontend folder:
 
-API will be available at: `http://localhost:5119`
+Bash
 
-### Frontend
-
-1. Navigate to frontend folder:
-```bash
 cd product-sales-frontend
-```
+Install dependencies:
 
-2. Install dependencies:
-```bash
+Bash
+
 npm install
-```
+Start development server:
 
-3. Start development server:
-```bash
+Bash
+
 npm run dev
-```
+📡 API Endpoints
+Authentication
+POST /api/auth/register - Register new user
 
-Frontend will be available at: `http://localhost:5173`
+POST /api/auth/login - Login and get JWT token
 
-### Default User
+Products (Protected)
+GET /api/products - Get all products
 
-Create a user via the register endpoint or use Postman:
-- POST `http://localhost:5119/api/auth/register`
-- Body: `{"username":"admin","password":"admin123"}`
+POST /api/products - Create product
 
-## API Endpoints
+Sales (Protected)
+GET /api/sales - Get all sales
 
-### Authentication
-- `POST /api/auth/register` - Register new user
-- `POST /api/auth/login` - Login and get JWT token
+POST /api/sales - Create sale
 
-### Products (Protected)
-- `GET /api/products` - Get all products
-- `GET /api/products/{id}` - Get product by ID
-- `POST /api/products` - Create product
-- `PUT /api/products/{id}` - Update product
-- `DELETE /api/products/{id}` - Delete product
-
-### Clients (Protected)
-- `GET /api/clients` - Get all clients
-- `GET /api/clients/{id}` - Get client by ID
-- `POST /api/clients` - Create client
-- `PUT /api/clients/{id}` - Update client
-- `DELETE /api/clients/{id}` - Delete client
-
-### Sales (Protected)
-- `GET /api/sales` - Get all sales
-- `GET /api/sales/{id}` - Get sale by ID
-- `POST /api/sales` - Create sale
-
-## Project Structure
-
-### Backend
-```
-ProductSalesAPI/
-├── Controllers/     # API endpoints
-├── Services/        # Business logic
-├── Data/            # DbContext
-├── Models/          # Entity models
-└── Tests/           # Unit tests
-```
-
-### Frontend
-```
-product-sales-frontend/
-├── src/
-│   ├── views/       # Page components
-│   ├── services/    # API integration
-│   └── router/      # Route configuration
-```
-
-## Testing
-
-Run backend unit tests:
-```bash
-dotnet test
-```
-
-## Development Notes
-
-- HTTPS redirection disabled in development for easier testing
-- CORS enabled for local development
-- JWT tokens expire after 3 hours
-
-## Author
-
+Author
 Harold Toribio

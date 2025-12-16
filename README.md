@@ -51,47 +51,44 @@ This project follows industry best practices for scalability and maintainability
   "DefaultConnection": "Server=localhost;Database=ProductSalesDB;Trusted_Connection=True;TrustServerCertificate=True"
 }
 
-Run migrations:
-
-Bash
+2. Run migrations:
 
 dotnet ef database update
-Start the API:
 
-Bash
+3. Start the API:
 
 dotnet run
-Frontend
-Navigate to frontend folder:
 
-Bash
+Frontend
+
+1. Navigate to frontend folder:
 
 cd product-sales-frontend
-Install dependencies:
 
-Bash
+2. Install dependencies:
 
 npm install
-Start development server:
 
-Bash
+3. Start development server:
 
 npm run dev
-📡 API Endpoints
-Authentication
-POST /api/auth/register - Register new user
 
-POST /api/auth/login - Login and get JWT token
+## 📡 API Endpoints
 
-Products (Protected)
-GET /api/products - Get all products
+**Authentication**
+**POST /api/auth/register - Register new user**
 
-POST /api/products - Create product
+POST /api/auth/login - Login and get JWT token**
 
-Sales (Protected)
-GET /api/sales - Get all sales
+**Products (Protected)**
+**GET /api/products - Get all products**
 
-POST /api/sales - Create sale
+**POST /api/products - Create product**
 
-Author
+**Sales (Protected)**
+**GET /api/sales - Get all sales**
+
+**POST /api/sales - Create sale**
+
+## Author
 Harold Toribio

@@ -1,7 +1,7 @@
 # Product & Sales Management System
 
-![Dashboard 1](product-sales-frontend/src/assets/SalesSystem.png)
-![Dashboard 2](product-sales-frontend/src/assets/SalesSystem2.png)
+![Dashboard Preview 1](product-sales-frontend/src/assets/SalesSystem.png)
+![Dashboard Preview 2](product-sales-frontend/src/assets/SalesSystem2.png)
 
 🎥 [Haz clic aquí para ver la Demo en Video](product-sales-frontend/src/assets/SalesSystemVidGif.mp4)
 
@@ -46,49 +46,55 @@ This project follows industry best practices for scalability and maintainability
 ### Backend (API)
 
 1. Update the connection string in `appsettings.json`:
-```json
+~~~json
 "ConnectionStrings": {
   "DefaultConnection": "Server=localhost;Database=ProductSalesDB;Trusted_Connection=True;TrustServerCertificate=True"
 }
+~~~
 
 2. Run migrations:
-
+~~~bash
 dotnet ef database update
+~~~
 
 3. Start the API:
-
+~~~bash
 dotnet run
+~~~
 
-Frontend
+### Frontend (Client)
 
 1. Navigate to frontend folder:
-
+~~~bash
 cd product-sales-frontend
+~~~
 
 2. Install dependencies:
-
+~~~bash
 npm install
+~~~
 
 3. Start development server:
-
+~~~bash
 npm run dev
+~~~
 
 ## 📡 API Endpoints
 
-**Authentication**
-**POST /api/auth/register - Register new user**
+### Authentication
+- `POST /api/auth/register` - Register new user
+- `POST /api/auth/login` - Login and get JWT token
 
-POST /api/auth/login - Login and get JWT token**
+### Products (Protected 🔒)
+- `GET /api/products` - Get all products
+- `POST /api/products` - Create product
+- `GET /api/products/{id}` - Get by ID
+- `PUT /api/products/{id}` - Update
+- `DELETE /api/products/{id}` - Delete
 
-**Products (Protected)**
-**GET /api/products - Get all products**
+### Sales (Protected 🔒)
+- `GET /api/sales` - Get all sales
+- `POST /api/sales` - Create sale
 
-**POST /api/products - Create product**
-
-**Sales (Protected)**
-**GET /api/sales - Get all sales**
-
-**POST /api/sales - Create sale**
-
-## Author
-Harold Toribio
+## 👤 Author
+**Harold Toribio**
